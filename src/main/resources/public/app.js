@@ -1,5 +1,5 @@
 window.eruptSiteConfig = {
-    title: "研发成功检测分析",
+    title: "教育技术服务在线预约登记管理",
     copyright: false,
     logoPath: " ",
     logoText: ""

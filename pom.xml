@@ -124,7 +124,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.kaiwang.prjwkcy.PrjWkcyApplication</mainClass>
+                    <mainClass>com.kaiwang.prjwkcy.Application</mainClass>
                 </configuration>
                 <executions>
                     <execution>
