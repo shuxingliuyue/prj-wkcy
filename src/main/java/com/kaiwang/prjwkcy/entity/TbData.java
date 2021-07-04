@@ -28,64 +28,39 @@ public class TbData implements DataProxy<TbData> {
     @EruptField
     private Long id;
     @EruptField(
-            views = @View(title = "项目编号",
+            views = @View(title = "编号",
                     sortable = true),
-            edit = @Edit(title = "项目编号",
+            edit = @Edit(title = "编号",
                     search = @Search(
                             vague = true
                     ))
     )
     private String No;
     @EruptField(
-            views = @View(title = "开始时间",
+            views = @View(title = "预约时间",
                     sortable = true),
-            edit = @Edit(title = "开始时间",
+            edit = @Edit(title = "预约时间",
                     search = @Search)
     )
-    private Date beginTime;
+    private Date orderTime;
+
     @EruptField(
-            views = @View(title = "结束时间",
+            views = @View(title = "预约内容",
                     sortable = true),
-            edit = @Edit(title = "结束时间",
-                    search = @Search)
-    )
-    private Date endTime;
-    @EruptField(
-            views = @View(title = "项目名称",
-                    sortable = true),
-            edit = @Edit(title = "项目名称",
+            edit = @Edit(title = "预约内容",
                     search = @Search(
                             vague = true
                     ))
     )
     private String name;
-    @ManyToOne
     @EruptField(
             views = {
-                    @View(title = "配置部门", column = "name"
+                    @View(title = "类别", column = "name"
                     )
             },
-            edit = @Edit(title = "配置本门", type = EditType.REFERENCE_TREE)
+            edit = @Edit(title = "类别")
     )
-    private EruptOrg org;
-    @ManyToOne
-    @EruptField(
-            views = {
-                    @View(title = "配置人员", column = "name"
-                    )
-            },
-            edit = @Edit(title = "配置人员", type = EditType.REFERENCE_TREE)
-    )
-    private EruptUser user;
-    @ManyToOne
-    @EruptField(
-            views = {
-                    @View(title = "配置PRP阶段", column = "name"
-                    )
-            },
-            edit = @Edit(title = "配置PRP阶段", type = EditType.REFERENCE_TREE)
-    )
-    private TbProject project;
+    private String type;
 
 
 }
