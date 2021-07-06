@@ -1,5 +1,5 @@
 window.eruptSiteConfig = {
-    title: "数字化学习工具智能化辅助支撑应用软件",
+    title: "教育平台运营维护智能一体化管理软件",
     copyright: false,
     logoPath: " ",
     logoText: ""

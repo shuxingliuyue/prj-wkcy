@@ -10,9 +10,10 @@ import xyz.erupt.annotation.sub_field.View;
 import xyz.erupt.annotation.sub_field.sub_edit.Search;
 
 import javax.persistence.*;
+import java.security.PrivateKey;
 import java.util.Date;
 
-@Erupt(name = "课程评价表",
+@Erupt(name = "资源上传",
         dataProxy = TbCourse.class)
 @Table(name = "course")
 @Entity
@@ -25,30 +26,37 @@ public class TbCourse implements DataProxy<TbCourse> {
     @EruptField
     private Long id;
     @EruptField(
-            views = @View(title = "主题",
+            views = @View(title = "标题",
                     sortable = true),
-            edit = @Edit(title = "主题",
+            edit = @Edit(title = "标题",
                     search = @Search(vague = true))
     )
     private String topic;
     @EruptField(
-            views = @View(title = "开始时间",
+            views = @View(title = "上传时间",
                     sortable = true),
-            edit = @Edit(title = "开始时间",
+            edit = @Edit(title = "上传时间",
                     search = @Search)
     )
     private Date beginTime;
     @EruptField(
-            views = @View(title = "结束时间",
+            views = @View(title = "资源类型",
                     sortable = true),
-            edit = @Edit(title = "结束时间",
+            edit = @Edit(title = "资源类型",
                     search = @Search)
     )
-    private Date endTime;
+    private String type;
     @EruptField(
-            views = @View(title = "参与调查",
+            views = @View(title = "资源大小",
                     sortable = true),
-            edit = @Edit(title = "参与调查",
+            edit = @Edit(title = "资源大小",
+                    search = @Search)
+    )
+    private Integer resourceSize;
+    @EruptField(
+            views = @View(title = "编目",
+                    sortable = true),
+            edit = @Edit(title = "编目",
                     search = @Search)
     )
     private String joinExplore;
