@@ -1,4 +1,4 @@
-/*C3*/SET SCHEMA PUBLIC
+/*C4*/SET SCHEMA PUBLIC
 alter table e_dict drop constraint UKf5wwh5osfukkeebw7h2yb4kmp
 alter table e_dict add constraint UKf5wwh5osfukkeebw7h2yb4kmp unique (code)
 alter table e_dict_item drop constraint UKl0kiq8otpn3fvtlvarebt8xkh
@@ -11,5 +11,5 @@ alter table e_upms_role drop constraint UKjgxkp7mr4183tcwosrbqpsl3a
 alter table e_upms_role add constraint UKjgxkp7mr4183tcwosrbqpsl3a unique (code)
 alter table e_upms_user drop constraint UK812t22yn0295dkkvx5gjgahax
 alter table e_upms_user add constraint UK812t22yn0295dkkvx5gjgahax unique (account)
-INSERT INTO E_UPMS_LOGIN_LOG VALUES(18,'Chrome 8 84','Computer','192.168.0.107','2021-07-03 18:34:37.925000','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','Windows 10','dIGrSV3TwlmVMhhL',1)
+INSERT INTO E_UPMS_LOGIN_LOG VALUES(21,'Chrome 8 84','Computer','192.168.0.107','2021-07-05 22:15:12.881000','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','Windows 10','TnFUVAiHZLHVqBvz',1)
 COMMIT
