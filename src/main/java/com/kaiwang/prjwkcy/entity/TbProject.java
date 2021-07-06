@@ -11,7 +11,7 @@ import xyz.erupt.annotation.sub_field.sub_edit.Search;
 
 import javax.persistence.*;
 
-@Erupt(name = "项目表",
+@Erupt(name = "课程表",
         dataProxy = {TbProject.class})
 @Table(name = "project")
 @Entity
@@ -24,23 +24,46 @@ public class TbProject implements DataProxy<TbProject> {
     @EruptField
     private Long id;
     @EruptField(
-            views = @View(title = "PRP缩写",
+            views = @View(title = "课程名称",
                     sortable = true),
-            edit = @Edit(title = "PRP缩写",
+            edit = @Edit(title = "课程名称",
                     search = @Search(vague = true))
     )
     private String name;
     @EruptField(
-            views = @View(title = "PRP阶段名称",
+            views = @View(title = "学习进度",
                     sortable = true),
-            edit = @Edit(title = "PRP阶段名称",
+            edit = @Edit(title = "学习进度",
                     search = @Search(
                             vague = true
                     ))
     )
     private String filed1;
-
-//    private String filed2;
-//
-//    private String filed3;
+    @EruptField(
+            views = @View(title = "学习时长",
+                    sortable = true),
+            edit = @Edit(title = "学习时长",
+                    search = @Search(
+                            vague = true
+                    ))
+    )
+    private String filed2;
+    @EruptField(
+            views = @View(title = "学习次数",
+                    sortable = true),
+            edit = @Edit(title = "学习次数",
+                    search = @Search(
+                            vague = true
+                    ))
+    )
+    private String filed3;
+    @EruptField(
+            views = @View(title = "考核状态",
+                    sortable = true),
+            edit = @Edit(title = "考核状态",
+                    search = @Search(
+                            vague = true
+                    ))
+    )
+    private String filed4;
 }

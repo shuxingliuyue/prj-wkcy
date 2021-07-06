@@ -6,52 +6,50 @@ import xyz.erupt.annotation.Erupt;
 import xyz.erupt.annotation.EruptField;
 import xyz.erupt.annotation.fun.DataProxy;
 import xyz.erupt.annotation.sub_field.Edit;
-import xyz.erupt.annotation.sub_field.EditType;
 import xyz.erupt.annotation.sub_field.View;
 import xyz.erupt.annotation.sub_field.sub_edit.Search;
-import xyz.erupt.upms.model.EruptOrg;
-import xyz.erupt.upms.model.EruptUser;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Erupt(name = "考试公告表",
-        dataProxy = {TbData.class})
-@Table(name = "data")
+@Erupt(name = "课程评价表",
+        dataProxy = TbCourse.class)
+@Table(name = "course")
 @Entity
 @Component
-public class TbData implements DataProxy<TbData> {
+public class TbCourse implements DataProxy<TbCourse> {
     @Id
     @GeneratedValue(generator = "generator")
     @GenericGenerator(name = "generator", strategy = "native")
     @Column(name = "id")
     @EruptField
     private Long id;
-
     @EruptField(
-            views = @View(title = "考试公告",
+            views = @View(title = "主题",
                     sortable = true),
-            edit = @Edit(title = "考试公告",
-                    search = @Search(
-                            vague = true
-                    ))
+            edit = @Edit(title = "主题",
+                    search = @Search(vague = true))
     )
-    private String name;
+    private String topic;
     @EruptField(
-            views = @View(title = "参加考试时间",
+            views = @View(title = "开始时间",
                     sortable = true),
-            edit = @Edit(title = "参加考试时间",
+            edit = @Edit(title = "开始时间",
                     search = @Search)
     )
     private Date beginTime;
-
     @EruptField(
-            views = @View(title = "成绩",
+            views = @View(title = "结束时间",
                     sortable = true),
-            edit = @Edit(title = "成绩",
+            edit = @Edit(title = "结束时间",
                     search = @Search)
     )
-    private String score;
-
-
+    private Date endTime;
+    @EruptField(
+            views = @View(title = "参与调查",
+                    sortable = true),
+            edit = @Edit(title = "参与调查",
+                    search = @Search)
+    )
+    private String joinExplore;
 }

@@ -1,5 +1,5 @@
 window.eruptSiteConfig = {
-    title: "研发成功检测分析",
+    title: "数字化学习工具智能化辅助支撑应用软件",
     copyright: false,
     logoPath: " ",
     logoText: ""
