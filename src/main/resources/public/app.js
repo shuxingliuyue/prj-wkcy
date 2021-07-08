@@ -1,5 +1,5 @@
 window.eruptSiteConfig = {
-    title: "教育技术开发成果共享交流管理平台",
+    title: "教育技术开发资料信息化管理系统",
     copyright: false,
     logoPath: " ",
     logoText: ""

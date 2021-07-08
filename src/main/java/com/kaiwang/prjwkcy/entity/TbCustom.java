@@ -7,14 +7,14 @@ import xyz.erupt.annotation.EruptField;
 import xyz.erupt.annotation.sub_field.Edit;
 import xyz.erupt.annotation.sub_field.EditType;
 import xyz.erupt.annotation.sub_field.View;
-import xyz.erupt.annotation.sub_field.sub_edit.InputType;
-import xyz.erupt.annotation.sub_field.sub_edit.ReferenceTreeType;
+import xyz.erupt.annotation.sub_field.sub_edit.ChoiceType;
 import xyz.erupt.annotation.sub_field.sub_edit.Search;
-import xyz.erupt.upms.model.EruptMenu;
+import xyz.erupt.annotation.sub_field.sub_edit.VL;
 
 import javax.persistence.*;
+import java.util.Date;
 
-@Erupt(name = "客户")
+@Erupt(name = "学生学籍管理")
 @Table(name = "custom")
 @Entity
 @Component
@@ -30,12 +30,42 @@ public class TbCustom {
 
     @EruptField(
             views = {@View(
-                    title = "客户名称",
+                    title = "学号",
                     sortable = true
             )},
             edit = @Edit(
-                    title = "客户名称",
-                    desc = "客户名称",
+                    title = "学号",
+                    desc = "学号",
+                    notNull = true,
+                    search = @Search(
+                            vague = true
+                    )
+            )
+    )
+    private String No;
+    @EruptField(
+            views = {@View(
+                    title = "班级",
+                    sortable = true
+            )},
+            edit = @Edit(
+                    title = "班级",
+                    desc = "班级",
+                    notNull = true,
+                    search = @Search(
+                            vague = true
+                    )
+            )
+    )
+    private String classRome;
+    @EruptField(
+            views = {@View(
+                    title = "姓名",
+                    sortable = true
+            )},
+            edit = @Edit(
+                    title = "姓名",
+                    desc = "姓名",
                     notNull = true,
                     search = @Search(
                             vague = true
@@ -46,12 +76,12 @@ public class TbCustom {
 
     @EruptField(
             views = {@View(
-                    title = "客户编号",
+                    title = "年纪",
                     sortable = true
             )},
             edit = @Edit(
-                    title = "客户编号",
-                    desc = "客户编号",
+                    title = "年纪",
+                    desc = "年纪",
                     notNull = true,
                     search = @Search(
                             vague = true
@@ -61,67 +91,77 @@ public class TbCustom {
     private Long num;
     @EruptField(
             views = {@View(
-                    title = "联系人",
-                    sortable = true
+                    title = "民族"
             )},
             edit = @Edit(
-                    title = "联系人",
-                    desc = "联系人",
-                    notNull = true,
+                    title = "民族",
                     search = @Search(
                             vague = true
                     )
             )
     )
-    private String contact;
+    private String filed1;
     @EruptField(
             views = {@View(
-                    title = "手机号码"
+                    title = "性别"
             )},
-            edit = @Edit(
-                    title = "手机号码",
-                    search = @Search(
-                            vague = true
-                    ),
-                    inputType = @InputType(
-                            regex = "^[1][3,4,5,6,7,8,9][0-9]{9}$"
-                    )
-            )
+            edit = @Edit(title = "性别", type = EditType.CHOICE,
+                    choiceType = @ChoiceType(
+                            vl = {
+                                    @VL(label = "男", value = "男"),
+                                    @VL(label = "女", value = "女")
+                            }
+                    ))
     )
-    private String phone;
-
+    private String sex;
     @EruptField(
             views = {@View(
-                    title = "邮箱"
+                    title = "政治面貌",
+                    column = "field2"
             )},
             edit = @Edit(
-                    title = "邮箱",
-                    search = @Search(
-                            vague = true
-                    ),
-                    inputType = @InputType(
-                            regex = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$"
-                    )
+                    title = "政治面貌"
             )
     )
-    private String email;
+    private String field2;
     @EruptField(
             views = {@View(
-                    title = "HTTPS",
-                    column = "https"
+                    title = "出生日期"
             )},
             edit = @Edit(
-                    title = "HTTPS"
+                    title = "出生日期"
             )
     )
-    private String https;
+    private Date birthday;
     @EruptField(
             views = {@View(
-                    title = "地址"
+                    title = "分类"
             )},
             edit = @Edit(
-                    title = "地址"
+                    title = "分类"
             )
     )
-    private String address;
+    private String type;
+    @EruptField(
+            views = {@View(
+                    title = "是否住校"
+            )},
+            edit = @Edit(title = "是否住校", type = EditType.CHOICE,
+                    choiceType = @ChoiceType(
+                            vl = {
+                                    @VL(label = "是", value = "是"),
+                                    @VL(label = "否", value = "否")
+                            }
+                    ))
+    )
+    private String field3;
+    @EruptField(
+            views = {@View(
+                    title = "职务"
+            )},
+            edit = @Edit(
+                    title = "职务"
+            )
+    )
+    private String filed4;
 }

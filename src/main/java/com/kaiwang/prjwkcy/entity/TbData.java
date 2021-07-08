@@ -17,7 +17,7 @@ import xyz.erupt.upms.model.EruptUser;
 import javax.persistence.*;
 import java.util.Date;
 
-@Erupt(name = "成果列表",
+@Erupt(name = "德育量化考评",
         dataProxy = {TbData.class})
 @Table(name = "data")
 @Entity
@@ -30,66 +30,75 @@ public class TbData implements DataProxy<TbData> {
     @EruptField
     private Long id;
     @EruptField(
-            views = @View(title = "成果编号",
-                    sortable = true),
-            edit = @Edit(title = "成果编号",
+            views = {@View(
+                    title = "班级",
+                    sortable = true
+            )},
+            edit = @Edit(
+                    title = "班级",
+                    desc = "班级",
+                    notNull = true,
                     search = @Search(
                             vague = true
-                    ))
+                    )
+            )
+    )
+    private String classRome;
+    @EruptField(
+            views = {@View(
+                    title = "学号",
+                    sortable = true
+            )},
+            edit = @Edit(
+                    title = "学号",
+                    desc = "学号",
+                    notNull = true,
+                    search = @Search(
+                            vague = true
+                    )
+            )
     )
     private String No;
     @EruptField(
-            views = @View(title = "成果名称",
-                    sortable = true),
-            edit = @Edit(title = "成果名称",
-                    search = @Search(vague = true))
-    )
-    private String name;
-    @EruptField(
-            views = @View(title = "所属类别",
-                    sortable = true),
-            edit = @Edit(title = "所属类别",
-                    search = @Search(vague = true))
-    )
-    private String type;
-    @EruptField(
-            views = @View(title = "作者",
-                    sortable = true),
-            edit = @Edit(title = "作者",
+            views = {@View(
+                    title = "姓名",
+                    sortable = true
+            )},
+            edit = @Edit(
+                    title = "姓名",
+                    desc = "姓名",
+                    notNull = true,
                     search = @Search(
                             vague = true
-                    ))
+                    )
+            )
     )
-    private String author;
+    private String name;
+
     @EruptField(
-            views = @View(title = "申报日期",
+            views = @View(title = "考评日期",
                     sortable = true),
-            edit = @Edit(title = "申报日期",
+            edit = @Edit(title = "考评日期",
                     search = @Search)
     )
     private Date orderTime;
     @EruptField(
-            views = {
-                    @View(title = "指派专家", column = "status"
-                    )
-            },
-            edit = @Edit(title = "指派专家")
+            views = {@View(
+                    title = "类型"
+            )},
+            edit = @Edit(
+                    title = "类型"
+            )
     )
-    private String professor;
+    private String type;
     @EruptField(
-            views = {
-                    @View(title = "状态", column = "status"
-                    )
-            },
-            edit = @Edit(title = "状态", type = EditType.CHOICE,
-                    choiceType = @ChoiceType(
-                            vl = {
-                                    @VL(label = "未受理", value = "未受理"),
-                                    @VL(label = "已受理", value = "已受理")
-                            }
-                    ))
+            views = {@View(
+                    title = "明细"
+            )},
+            edit = @Edit(
+                    title = "明细"
+            )
     )
-    private String status;
-
+    private String detail;
 
 }

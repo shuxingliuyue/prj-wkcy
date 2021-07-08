@@ -8,7 +8,7 @@ server:
 spring:
   datasource:
     driver-class-name: org.hsqldb.jdbc.JDBCDriver
-    url: jdbc:hsqldb:file:D:/work_technology/IdeaWorkSpace/prj-wyck_7/db/wyck
+    url: jdbc:hsqldb:file:D:/work_technology/IdeaWorkSpace/prj-wyck_8/db/wyck
     username: admin
     password: 123456
   jpa:
