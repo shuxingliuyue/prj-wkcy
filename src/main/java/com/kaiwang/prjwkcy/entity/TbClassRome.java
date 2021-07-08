@@ -1,32 +1,24 @@
 package com.kaiwang.prjwkcy.entity;
 
-import org.hibernate.annotations.GenericGenerator;
 import org.springframework.stereotype.Component;
 import xyz.erupt.annotation.Erupt;
 import xyz.erupt.annotation.EruptField;
 import xyz.erupt.annotation.fun.DataProxy;
 import xyz.erupt.annotation.sub_field.Edit;
-import xyz.erupt.annotation.sub_field.EditType;
 import xyz.erupt.annotation.sub_field.View;
 import xyz.erupt.annotation.sub_field.sub_edit.Search;
-import xyz.erupt.upms.model.EruptOrg;
-import xyz.erupt.upms.model.EruptUser;
+import xyz.erupt.jpa.model.BaseModel;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
-@Erupt(name = "教师评价等级管理",
-        dataProxy = {TbData.class})
-@Table(name = "data")
+@Erupt(name = "教室管理",
+        dataProxy = {TbClassRome.class})
+@Table(name = "classrome")
 @Entity
 @Component
-public class TbData implements DataProxy<TbData> {
-    @Id
-    @GeneratedValue(generator = "generator")
-    @GenericGenerator(name = "generator", strategy = "native")
-    @Column(name = "id")
-    @EruptField
-    private Long id;
+public class TbClassRome extends BaseModel implements DataProxy<TbClassRome> {
     @EruptField(
             views = @View(title = "序号",
                     sortable = true),
@@ -37,36 +29,54 @@ public class TbData implements DataProxy<TbData> {
     )
     private String No;
     @EruptField(
-            views = @View(title = "教师评价等级名称",
+            views = @View(title = "隶属校区",
                     sortable = true),
-            edit = @Edit(title = "教师评价等级名称",
+            edit = @Edit(title = "隶属校区",
+                    search = @Search(
+                            vague = true
+                    ))
+    )
+    private String Num;
+    @EruptField(
+            views = @View(title = "教室名称",
+                    sortable = true),
+            edit = @Edit(title = "教室名称",
                     search = @Search(
                             vague = true
                     ))
     )
     private String name;
     @EruptField(
-            views = @View(title = "教师评价等级说明",
+            views = @View(title = "教室容量",
                     sortable = true),
-            edit = @Edit(title = "教师评价等级说明",
+            edit = @Edit(title = "教室容量",
                     search = @Search(
                             vague = true
                     ))
     )
-    private String desc;
+    private Integer capacity;
     @EruptField(
-            views = @View(title = "最低教师评价",
+            views = @View(title = "教室类型",
                     sortable = true),
-            edit = @Edit(title = "最低教师评价",
+            edit = @Edit(title = "教室类型",
+                    search = @Search(
+                            vague = true
+                    ))
+    )
+    private String type;
+    @EruptField(
+            views = @View(title = "显示顺序",
+                    sortable = true),
+            edit = @Edit(title = "显示顺序",
                     search = @Search(
                             vague = true
                     ))
     )
     private String grade;
     @EruptField(
-            views = @View(title = "建立时间",
+            views = @View(title = "操作时间",
                     sortable = true),
-            edit = @Edit(title = "建立时间",
+            edit = @Edit(title = "操作时间",
                     search = @Search)
     )
     private Date beginTime;

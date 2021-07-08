@@ -1,5 +1,5 @@
 window.eruptSiteConfig = {
-    title: "教育工具支撑技术研发成果监测分析软件",
+    title: "教育平台后台数据收集统计管理软件",
     copyright: false,
     logoPath: " ",
     logoText: ""
