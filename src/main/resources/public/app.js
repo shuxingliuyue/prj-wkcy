@@ -1,5 +1,5 @@
 window.eruptSiteConfig = {
-    title: "教育技术开发资料信息化管理系统",
+    title: "创新服务模式研发技术在线咨询管理平台",
     copyright: false,
     logoPath: " ",
     logoText: ""

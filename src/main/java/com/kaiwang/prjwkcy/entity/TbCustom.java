@@ -14,7 +14,7 @@ import xyz.erupt.annotation.sub_field.sub_edit.VL;
 import javax.persistence.*;
 import java.util.Date;
 
-@Erupt(name = "学生学籍管理")
+@Erupt(name = "进度查询")
 @Table(name = "custom")
 @Entity
 @Component
@@ -30,12 +30,12 @@ public class TbCustom {
 
     @EruptField(
             views = {@View(
-                    title = "学号",
+                    title = "序号",
                     sortable = true
             )},
             edit = @Edit(
-                    title = "学号",
-                    desc = "学号",
+                    title = "序号",
+                    desc = "序号",
                     notNull = true,
                     search = @Search(
                             vague = true
@@ -45,27 +45,12 @@ public class TbCustom {
     private String No;
     @EruptField(
             views = {@View(
-                    title = "班级",
+                    title = "申请企业名称",
                     sortable = true
             )},
             edit = @Edit(
-                    title = "班级",
-                    desc = "班级",
-                    notNull = true,
-                    search = @Search(
-                            vague = true
-                    )
-            )
-    )
-    private String classRome;
-    @EruptField(
-            views = {@View(
-                    title = "姓名",
-                    sortable = true
-            )},
-            edit = @Edit(
-                    title = "姓名",
-                    desc = "姓名",
+                    title = "申请企业名称",
+                    desc = "申请企业名称",
                     notNull = true,
                     search = @Search(
                             vague = true
@@ -76,44 +61,53 @@ public class TbCustom {
 
     @EruptField(
             views = {@View(
-                    title = "年纪",
+                    title = "登记日期"
+            )},
+            edit = @Edit(
+                    title = "登记日期"
+            )
+    )
+    private Date day;
+
+    @EruptField(
+            views = {@View(
+                    title = "进度",
                     sortable = true
             )},
             edit = @Edit(
-                    title = "年纪",
-                    desc = "年纪",
+                    title = "进度",
+                    desc = "进度",
                     notNull = true,
                     search = @Search(
                             vague = true
                     )
             )
     )
-    private Long num;
+    private String progress;
     @EruptField(
             views = {@View(
-                    title = "民族"
+                    title = "负责员工"
             )},
             edit = @Edit(
-                    title = "民族",
+                    title = "负责员工",
                     search = @Search(
                             vague = true
                     )
             )
     )
     private String filed1;
+
     @EruptField(
             views = {@View(
-                    title = "性别"
+                    title = "注册企业类型"
             )},
-            edit = @Edit(title = "性别", type = EditType.CHOICE,
-                    choiceType = @ChoiceType(
-                            vl = {
-                                    @VL(label = "男", value = "男"),
-                                    @VL(label = "女", value = "女")
-                            }
-                    ))
+            edit = @Edit(
+                    title = "注册企业类型"
+            )
     )
-    private String sex;
+    private String type;
+
+/*
     @EruptField(
             views = {@View(
                     title = "政治面貌",
@@ -124,25 +118,7 @@ public class TbCustom {
             )
     )
     private String field2;
-    @EruptField(
-            views = {@View(
-                    title = "出生日期"
-            )},
-            edit = @Edit(
-                    title = "出生日期"
-            )
-    )
-    private Date birthday;
-    @EruptField(
-            views = {@View(
-                    title = "分类"
-            )},
-            edit = @Edit(
-                    title = "分类"
-            )
-    )
-    private String type;
-    @EruptField(
+   @EruptField(
             views = {@View(
                     title = "是否住校"
             )},
@@ -163,5 +139,5 @@ public class TbCustom {
                     title = "职务"
             )
     )
-    private String filed4;
+    private String filed4;*/
 }

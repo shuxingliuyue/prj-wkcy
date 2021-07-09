@@ -1,5 +1,5 @@
 .alain-default__header {
-    background: #607D8B
+    background: #1b55a7 !important;
 }
 
 layout-passport > .container {
@@ -7,11 +7,12 @@ layout-passport > .container {
     background-repeat: repeat !important;
     background-size: cover !important;
     background-color: #fff !important;
-    background-image: url(pictures/background.jpg) !important;
+    background-image: url(pictures/background1.jpeg) !important;
 }
 
 layout-passport .title {
     font-family: Courier New, Menlo, Monaco, Consolas, monospace !important;
+    color: white !important;
 }
 
 layout-passport form {

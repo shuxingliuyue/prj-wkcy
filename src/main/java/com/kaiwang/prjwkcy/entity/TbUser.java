@@ -9,8 +9,10 @@ import xyz.erupt.annotation.sub_erupt.LinkTree;
 import xyz.erupt.annotation.sub_field.Edit;
 import xyz.erupt.annotation.sub_field.EditType;
 import xyz.erupt.annotation.sub_field.View;
+import xyz.erupt.annotation.sub_field.sub_edit.ChoiceType;
 import xyz.erupt.annotation.sub_field.sub_edit.InputType;
 import xyz.erupt.annotation.sub_field.sub_edit.Search;
+import xyz.erupt.annotation.sub_field.sub_edit.VL;
 import xyz.erupt.upms.model.EruptUser;
 import xyz.erupt.upms.model.base.HyperModel;
 
@@ -21,8 +23,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tbuser")
 @Erupt(
-        name = "用户",
-        desc = "用户配置",
+        name = "客户管理",
+        desc = "客户管理",
         dataProxy = {TbUser.class}
 )
 @Component
@@ -32,12 +34,12 @@ public class TbUser extends HyperModel implements DataProxy<EruptUser> {
     private static final String PHONE_REGEX = "^[1][3,4,5,6,7,8,9][0-9]{9}$";
     @EruptField(
             views = {@View(
-                    title = "名/姓/名的拼音/姓的拼音/中间名字/别名",
+                    title = "客户名称",
                     sortable = true
             )},
             edit = @Edit(
-                    title = "名/姓/名的拼音/姓的拼音/中间名字/别名",
-                    desc = "名/姓/名的拼音/姓的拼音/中间名字/别名",
+                    title = "客户名称",
+                    desc = "客户名称",
                     notNull = true,
                     search = @Search(
                             vague = true
@@ -47,10 +49,85 @@ public class TbUser extends HyperModel implements DataProxy<EruptUser> {
     private String name;
     @EruptField(
             views = {@View(
-                    title = "Email地址"
+                    title = "客户类别",
+                    sortable = true
             )},
             edit = @Edit(
-                    title = "Email地址",
+                    title = "客户类别",
+                    desc = "客户类别",
+                    notNull = true,
+                    search = @Search(
+                            vague = true
+                    )
+            )
+    )
+    private String type;
+
+    @EruptField(
+            views = {@View(
+                    title = "客户状态",
+                    sortable = true
+            )},
+            edit = @Edit(
+                    title = "客户状态",
+                    notNull = true,
+                    search = @Search
+            )
+    )
+    private String status;
+    @EruptField(
+            views = {@View(
+                    title = "主联系人",
+                    sortable = true
+            )},
+            edit = @Edit(
+                    title = "主联系人",
+                    notNull = true,
+                    search = @Search
+            )
+    )
+    private String contact;
+
+    @EruptField(
+            views = {@View(
+                    title = "职位",
+                    sortable = true
+            )},
+            edit = @Edit(
+                    title = "职位",
+                    notNull = true,
+                    search = @Search
+            )
+    )
+    private String position;
+    @EruptField(
+            views = {@View(
+                    title = "性别"
+            )},
+            edit = @Edit(title = "性别", type = EditType.CHOICE,
+                    choiceType = @ChoiceType(
+                            vl = {
+                                    @VL(label = "男", value = "男"),
+                                    @VL(label = "女", value = "女")
+                            }
+                    ))
+    )
+    private String sex;
+    @EruptField(
+            views = {@View(
+                    title = "联系手机"
+            )},
+            edit = @Edit(
+                    title = "联系手机"
+            )
+    )
+    private String phone;
+    @EruptField(
+            views = {@View(
+                    title = "联系邮箱"
+            )},
+            edit = @Edit(
+                    title = "联系邮箱",
                     search = @Search(
                             vague = true
                     ),
@@ -60,44 +137,6 @@ public class TbUser extends HyperModel implements DataProxy<EruptUser> {
             )
     )
     private String email;
-    @EruptField(
-            views = @View(title = "市/县"),
-            edit = @Edit(
-                    title = "市/县",
-                    type = EditType.TEXTAREA
-            )
-    )
-    private String city;
-    @EruptField(
-            views = @View(title = "国家和地区"),
-            edit = @Edit(
-                    title = "国家和地区",
-                    type = EditType.TEXTAREA
-            )
-    )
-    private String country;
-    @Column(
-            length = 2000
-    )
-    @EruptField(
-            views = @View(title = "上次访问"),
-            edit = @Edit(
-                    title = "上次访问",
-                    type = EditType.TEXTAREA
-            )
-    )
-    private String lastView;
-    @Column(
-            length = 2000
-    )
-    @EruptField(
-            edit = @Edit(
-                    title = "备注",
-                    type = EditType.TEXTAREA
-            )
-    )
-    private String remark;
-
     public TbUser() {
     }
 

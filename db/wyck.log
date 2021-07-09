@@ -1,19 +1,4 @@
-/*C3*/SET SCHEMA PUBLIC
-alter table custom add column no varchar(255)
-alter table custom add column birthday timestamp
-alter table custom add column class_rome varchar(255)
-alter table custom add column field2 varchar(255)
-alter table custom add column field3 varchar(255)
-alter table custom add column filed1 varchar(255)
-alter table custom add column filed4 varchar(255)
-alter table custom add column sex varchar(255)
-alter table custom add column type varchar(255)
-alter table data add column class_rome varchar(255)
-alter table data add column detail varchar(255)
-alter table project add column class_rome varchar(255)
-alter table project add column detail varchar(255)
-alter table project add column order_time timestamp
-alter table project add column type varchar(255)
+/*C13*/SET SCHEMA PUBLIC
 alter table e_dict drop constraint UKf5wwh5osfukkeebw7h2yb4kmp
 alter table e_dict add constraint UKf5wwh5osfukkeebw7h2yb4kmp unique (code)
 alter table e_dict_item drop constraint UKl0kiq8otpn3fvtlvarebt8xkh
@@ -26,71 +11,92 @@ alter table e_upms_role drop constraint UKjgxkp7mr4183tcwosrbqpsl3a
 alter table e_upms_role add constraint UKjgxkp7mr4183tcwosrbqpsl3a unique (code)
 alter table e_upms_user drop constraint UK812t22yn0295dkkvx5gjgahax
 alter table e_upms_user add constraint UK812t22yn0295dkkvx5gjgahax unique (account)
-INSERT INTO E_UPMS_MENU VALUES(18,NULL,NULL,'EruptDict',NULL,'\u5b57\u5178\u7ef4\u62a4',NULL,NULL,50,1,'table','EruptDict',NULL,NULL,1)
-INSERT INTO E_UPMS_MENU VALUES(19,NULL,NULL,'EruptDictItem',NULL,'\u5b57\u5178\u9879',NULL,NULL,10,2,'table','EruptDictItem',NULL,NULL,18)
+INSERT INTO E_UPMS_LOGIN_LOG VALUES(13,'Chrome 8 84','Computer','192.168.0.107','2021-07-09 19:44:03.653000','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','Windows 10','2HZ4knMVrHdCjKKH',1)
 COMMIT
-INSERT INTO E_UPMS_MENU VALUES(20,NULL,NULL,'$generator','fa fa-code','\u4ee3\u7801\u751f\u6210',NULL,NULL,40,1,NULL,NULL,NULL,NULL,NULL)
-INSERT INTO E_UPMS_MENU VALUES(21,NULL,NULL,'GeneratorClass',NULL,'\u751f\u6210Erupt\u4ee3\u7801',NULL,NULL,0,1,'table','GeneratorClass',NULL,NULL,20)
+INSERT INTO E_UPMS_LOGIN_LOG VALUES(14,'Chrome 8 84','Computer','192.168.0.107','2021-07-09 19:44:24.432000','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','Windows 10','VkxifroGYeUHcWwi',1)
 COMMIT
-INSERT INTO E_UPMS_LOGIN_LOG VALUES(11,'Chrome 8 84','Computer','192.168.0.107','2021-07-09 01:00:49.396000','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','Windows 10','Xg6yTQxytmG5Pgvz',1)
+INSERT INTO E_UPMS_LOGIN_LOG VALUES(15,'Chrome 8 84','Computer','192.168.0.107','2021-07-09 19:47:09.589000','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','Windows 10','e54ER6gJ10xcGyXa',1)
 COMMIT
-DELETE FROM E_UPMS_MENU WHERE ID=21
+INSERT INTO E_UPMS_LOGIN_LOG VALUES(16,'Chrome 8 84','Computer','192.168.0.107','2021-07-09 19:48:18.090000','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','Windows 10','EDPhl3KrPPSFmydN',1)
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(28,'\u5220\u9664 | \u83dc\u5355\u914d\u7f6e','2021-07-09 01:01:17.227000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu/21','DELETE',NULL,TRUE,44,1)
+DELETE FROM E_UPMS_MENU WHERE ID=25
 COMMIT
-DELETE FROM E_UPMS_MENU WHERE ID=20
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(42,'\u5220\u9664 | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:49:38.345000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu/25','DELETE',NULL,TRUE,53,1)
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(29,'\u5220\u9664 | \u83dc\u5355\u914d\u7f6e','2021-07-09 01:01:19.876000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu/20','DELETE',NULL,TRUE,18,1)
+DELETE FROM E_UPMS_MENU WHERE ID=24
 COMMIT
-DELETE FROM E_UPMS_MENU WHERE ID=19
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(43,'\u5220\u9664 | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:49:44.562000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu/24','DELETE',NULL,TRUE,31,1)
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(30,'\u5220\u9664 | \u83dc\u5355\u914d\u7f6e','2021-07-09 01:01:23.620000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu/19','DELETE',NULL,TRUE,14,1)
+/*C14*/SET SCHEMA PUBLIC
+DELETE FROM E_UPMS_MENU WHERE ID=23
 COMMIT
-DELETE FROM E_UPMS_MENU WHERE ID=18
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(44,'\u5220\u9664 | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:49:48.476000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu/23','DELETE',NULL,TRUE,10,1)
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(31,'\u5220\u9664 | \u83dc\u5355\u914d\u7f6e','2021-07-09 01:01:26.718000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu/18','DELETE',NULL,TRUE,9,1)
+/*C13*/DELETE FROM E_UPMS_MENU WHERE ID=22
 COMMIT
-DELETE FROM E_UPMS_MENU WHERE ID=15
-INSERT INTO E_UPMS_MENU VALUES(15,'2021-07-09 00:19:19.719000','2021-07-09 01:02:31.602000','TbCustom',NULL,'\u5b66\u751f\u6863\u6848\u7ba1\u7406',NULL,NULL,41,1,'table','TbCustom',1,1,1)
-COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(32,'\u4fee\u6539 | \u83dc\u5355\u914d\u7f6e','2021-07-09 01:02:31.616000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu','PUT','{"code":"TbCustom","name":"\u5b66\u751f\u6863\u6848\u7ba1\u7406","status":"1","type":"table","value":"TbCustom","sort":41,"parentMenu":{"id":"1","name":"\u7cfb\u7edf\u7ba1\u7406"},"id":"15"}',TRUE,23,1)
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(45,'\u5220\u9664 | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:49:51.546000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu/22','DELETE',NULL,TRUE,10,1)
 COMMIT
 DELETE FROM E_UPMS_MENU WHERE ID=16
-INSERT INTO E_UPMS_MENU VALUES(16,'2021-07-09 00:20:22.126000','2021-07-09 01:02:54.722000','TbProject',NULL,'\u91cd\u5927\u4e8b\u4ef6\u5904\u7406',NULL,NULL,43,1,'table','TbProject',1,1,1)
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(33,'\u4fee\u6539 | \u83dc\u5355\u914d\u7f6e','2021-07-09 01:02:54.730000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu','PUT','{"code":"TbProject","name":"\u91cd\u5927\u4e8b\u4ef6\u5904\u7406","status":"1","type":"table","value":"TbProject","sort":43,"parentMenu":{"id":"1","name":"\u7cfb\u7edf\u7ba1\u7406"},"id":"16"}',TRUE,11,1)
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(46,'\u5220\u9664 | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:49:54.165000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu/16','DELETE',NULL,TRUE,9,1)
+COMMIT
+ROLLBACK
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(47,'\u4fee\u6539 | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:50:36.050000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu','PUT','{"code":"TbData","name":"\u54a8\u8be2\u5de5\u5355","status":"1","type":"table","value":"TbData","sort":41,"parentMenu":{"id":"1","name":"\u7cfb\u7edf\u7ba1\u7406"},"id":"15"}',TRUE,42,1)
+COMMIT
+DELETE FROM E_UPMS_MENU WHERE ID=15
+INSERT INTO E_UPMS_MENU VALUES(15,'2021-07-09 00:19:19.719000','2021-07-09 19:50:44.452000','TbData1',NULL,'\u54a8\u8be2\u5de5\u5355',NULL,NULL,41,1,'table','TbData',1,1,1)
+COMMIT
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(48,'\u4fee\u6539 | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:50:44.459000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu','PUT','{"code":"TbData1","name":"\u54a8\u8be2\u5de5\u5355","status":"1","type":"table","value":"TbData","sort":41,"parentMenu":{"id":"1","name":"\u7cfb\u7edf\u7ba1\u7406"},"id":"15"}',TRUE,11,1)
 COMMIT
 DELETE FROM E_UPMS_MENU WHERE ID=17
-INSERT INTO E_UPMS_MENU VALUES(17,'2021-07-09 00:21:20.343000','2021-07-09 01:03:08.038000','TbData',NULL,'\u5fb7\u80b2\u91cf\u5316\u8003\u8bc4',NULL,NULL,42,1,'table','TbData',1,1,1)
+INSERT INTO E_UPMS_MENU VALUES(17,'2021-07-09 00:21:20.343000','2021-07-09 19:50:53.762000','TbData',NULL,'\u54a8\u8be2\u5de5\u5355',NULL,NULL,42,1,'table','TbData',1,1,1)
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(34,'\u4fee\u6539 | \u83dc\u5355\u914d\u7f6e','2021-07-09 01:03:08.048000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu','PUT','{"code":"TbData","name":"\u5fb7\u80b2\u91cf\u5316\u8003\u8bc4","status":"1","type":"table","value":"TbData","sort":42,"parentMenu":{"id":"1","name":"\u7cfb\u7edf\u7ba1\u7406"},"id":"17"}',TRUE,13,1)
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(49,'\u4fee\u6539 | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:50:53.772000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu','PUT','{"code":"TbData","name":"\u54a8\u8be2\u5de5\u5355","status":"1","type":"table","value":"TbData","sort":42,"parentMenu":{"id":"1","name":"\u7cfb\u7edf\u7ba1\u7406"},"id":"17"}',TRUE,15,1)
 COMMIT
-DELETE FROM CUSTOM WHERE ID=1
+DELETE FROM E_UPMS_MENU WHERE ID=15
+INSERT INTO E_UPMS_MENU VALUES(15,'2021-07-09 00:19:19.719000','2021-07-09 19:51:41.901000','TbCustom',NULL,'\u8fdb\u5ea6\u67e5\u8be2',NULL,NULL,41,1,'table','TbCustom',1,1,1)
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(35,'\u6279\u91cf\u5220\u9664 | \u5b66\u751f\u5b66\u7c4d\u7ba1\u7406','2021-07-09 01:03:19.486000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbCustom','DELETE','ids=[1]\u000a',TRUE,10,1)
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(50,'\u4fee\u6539 | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:51:41.914000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu','PUT','{"code":"TbCustom","name":"\u8fdb\u5ea6\u67e5\u8be2","status":"1","type":"table","value":"TbCustom","sort":41,"parentMenu":{"id":"1","name":"\u7cfb\u7edf\u7ba1\u7406"},"id":"15"}',TRUE,17,1)
 COMMIT
-INSERT INTO CUSTOM VALUES(2,NULL,NULL,NULL,NULL,'\u9648\u6768',15,NULL,'NIT0010100210','1995-07-25 00:00:00.000000','\u7535\u5b5072','\u56e2\u5458','\u662f','\u6c49\u65cf','\u5b66\u4e60\u59d4\u5458','\u7537','\u672c\u5730\u751f')
+DELETE FROM E_UPMS_MENU WHERE ID=15
+INSERT INTO E_UPMS_MENU VALUES(15,'2021-07-09 00:19:19.719000','2021-07-09 19:51:53.912000','TbCustom',NULL,'\u8fdb\u5ea6\u67e5\u8be2',NULL,NULL,42,1,'table','TbCustom',1,1,1)
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(36,'\u65b0\u589e | \u5b66\u751f\u5b66\u7c4d\u7ba1\u7406','2021-07-09 01:04:28.514000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbCustom','POST','{"No":"NIT0010100210","classRome":"\u7535\u5b5072","name":"\u9648\u6768","num":15,"filed1":"\u6c49\u65cf","sex":"\u7537","field2":"\u56e2\u5458","birthday":"1995-07-25","type":"\u672c\u5730\u751f","field3":"\u662f","filed4":"\u5b66\u4e60\u59d4\u5458"}',TRUE,13,1)
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(51,'\u4fee\u6539 | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:51:53.919000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu','PUT','{"code":"TbCustom","name":"\u8fdb\u5ea6\u67e5\u8be2","status":"1","type":"table","value":"TbCustom","sort":42,"parentMenu":{"id":"1","name":"\u7cfb\u7edf\u7ba1\u7406"},"id":"15"}',TRUE,11,1)
 COMMIT
-INSERT INTO CUSTOM VALUES(3,NULL,NULL,NULL,NULL,'\u674e\u5f66\u6052',15,NULL,'NIT0010100207','1986-07-09 00:00:00.000000','\u7535\u5b5072','\u56e2\u5458','\u662f','\u8499\u53e4\u65cf',NULL,'\u7537','\u62e9\u6821\u751f')
+DELETE FROM E_UPMS_MENU WHERE ID=17
+INSERT INTO E_UPMS_MENU VALUES(17,'2021-07-09 00:21:20.343000','2021-07-09 19:52:00.245000','TbData',NULL,'\u54a8\u8be2\u5de5\u5355',NULL,NULL,41,1,'table','TbData',1,1,1)
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(37,'\u65b0\u589e | \u5b66\u751f\u5b66\u7c4d\u7ba1\u7406','2021-07-09 01:05:22.078000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbCustom','POST','{"No":"NIT0010100207","classRome":"\u7535\u5b5072","name":"\u674e\u5f66\u6052","num":15,"filed1":"\u8499\u53e4\u65cf","sex":"\u7537","field2":"\u56e2\u5458","birthday":"1986-07-09","type":"\u62e9\u6821\u751f","field3":"\u662f"}',TRUE,7,1)
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(52,'\u4fee\u6539 | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:52:00.255000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu','PUT','{"code":"TbData","name":"\u54a8\u8be2\u5de5\u5355","status":"1","type":"table","value":"TbData","sort":41,"parentMenu":{"id":"1","name":"\u7cfb\u7edf\u7ba1\u7406"},"id":"17"}',TRUE,16,1)
 COMMIT
-DELETE FROM DATA WHERE ID=2
+INSERT INTO E_UPMS_MENU VALUES(26,'2021-07-09 19:52:40.804000',NULL,'TbUser',NULL,'\u5ba2\u6237\u7ba1\u7406',NULL,NULL,43,1,'table','TbUser',1,NULL,1)
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(38,'\u6279\u91cf\u5220\u9664 | \u5fb7\u80b2\u91cf\u5316\u8003\u8bc4','2021-07-09 01:05:28.164000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbData','DELETE','ids=[2]\u000a',TRUE,7,1)
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(53,'\u65b0\u589e | \u83dc\u5355\u914d\u7f6e','2021-07-09 19:52:40.809000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/EruptMenu','POST','{"code":"TbUser","name":"\u5ba2\u6237\u7ba1\u7406","status":"1","type":"table","value":"TbUser","sort":43,"parentMenu":{"id":"1","name":"\u7cfb\u7edf\u7ba1\u7406"}}',TRUE,16,1)
 COMMIT
-INSERT INTO DATA VALUES(3,'NIT0010100210',NULL,NULL,'\u9648\u6768',NULL,NULL,NULL,'2021-07-09 00:00:00.000000','8',NULL,NULL,NULL,'\u7535\u5b5072',NULL)
+DELETE FROM DATA WHERE ID=3
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(39,'\u65b0\u589e | \u5fb7\u80b2\u91cf\u5316\u8003\u8bc4','2021-07-09 01:05:48.342000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbData','POST','{"classRome":"\u7535\u5b5072","No":"NIT0010100210","name":"\u9648\u6768","orderTime":"2021-07-09","type":"8"}',TRUE,5,1)
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(54,'\u6279\u91cf\u5220\u9664 | \u54a8\u8be2\u5de5\u5355\u7f16\u53f7','2021-07-09 19:52:48.314000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbData','DELETE','ids=[3]\u000a',TRUE,10,1)
 COMMIT
-DELETE FROM PROJECT WHERE ID=1
-DELETE FROM PROJECT WHERE ID=2
+INSERT INTO DATA VALUES(4,'1',NULL,NULL,'161201242',NULL,NULL,NULL,'2021-07-09 00:00:00.000000',NULL,NULL,NULL,NULL,NULL,NULL,'\u5317\u4eacxx\u79d1\u6280\u6709\u9650\u516c\u53f8','13473368569','\u5df2\u89e3\u51b3','1002')
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(40,'\u6279\u91cf\u5220\u9664 | \u91cd\u5927\u4e8b\u4ef6\u5904\u7406','2021-07-09 01:05:52.500000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbProject','DELETE','ids=[1, 2]\u000a',TRUE,12,1)
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(55,'\u65b0\u589e | \u54a8\u8be2\u5de5\u5355\u7f16\u53f7','2021-07-09 19:53:42.632000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbData','POST','{"No":"1","name":"161201242","orderTime":"2021-07-09","service":"1002","custom":"\u5317\u4eacxx\u79d1\u6280\u6709\u9650\u516c\u53f8","phone":"13473368569","result":"\u5df2\u89e3\u51b3"}',TRUE,6,1)
 COMMIT
-INSERT INTO PROJECT VALUES(3,'6','\u9648\u6768','NIT0010100210','\u7535\u5b5072',NULL,'2021-07-09 00:00:00.000000',NULL)
+DELETE FROM CUSTOM WHERE ID=2
+DELETE FROM CUSTOM WHERE ID=3
 COMMIT
-INSERT INTO E_UPMS_OPERATE_LOG VALUES(41,'\u65b0\u589e | \u91cd\u5927\u4e8b\u4ef6\u5904\u7406','2021-07-09 01:06:17.469000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbProject','POST','{"classRome":"\u7535\u5b5072","No":"NIT0010100210","name":"\u9648\u6768","orderTime":"2021-07-09","filed1":"6"}',TRUE,5,1)
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(56,'\u6279\u91cf\u5220\u9664 | \u5b66\u751f\u5b66\u7c4d\u7ba1\u7406','2021-07-09 19:53:49.795000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbCustom','DELETE','ids=[2, 3]\u000a',TRUE,12,1)
+COMMIT
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(57,'\u65b0\u589e | \u5b66\u751f\u5b66\u7c4d\u7ba1\u7406','2021-07-09 19:54:35.746000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbCustom','POST','{"No":"1","name":"\u5317\u4eacxx\u79d1\u6280\u6709\u9650\u516c\u53f8","day":"2021-07-09","filed1":"admin","type":"\u6709\u9650\u8d23\u4efb\u516c\u53f8"}',TRUE,3,1)
+COMMIT
+INSERT INTO CUSTOM VALUES(4,NULL,NULL,NULL,NULL,'\u5317\u4eacxx\u79d1\u6280\u6709\u9650\u516c\u53f8',NULL,NULL,'1',NULL,NULL,NULL,NULL,'admin',NULL,NULL,'\u6709\u9650\u8d23\u4efb\u516c\u53f8','2021-07-09 00:00:00.000000','0%')
+COMMIT
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(58,'\u65b0\u589e | \u5b66\u751f\u5b66\u7c4d\u7ba1\u7406','2021-07-09 19:54:42.217000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbCustom','POST','{"No":"1","name":"\u5317\u4eacxx\u79d1\u6280\u6709\u9650\u516c\u53f8","day":"2021-07-09","progress":"0%","filed1":"admin","type":"\u6709\u9650\u8d23\u4efb\u516c\u53f8"}',TRUE,6,1)
+COMMIT
+/*C14*/DELETE FROM TBUSER WHERE ID=1
+COMMIT
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(59,'\u6279\u91cf\u5220\u9664 | \u5ba2\u6237\u7ba1\u7406','2021-07-09 19:54:55.852000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbUser','DELETE','ids=[1]\u000a',TRUE,9,1)
+COMMIT
+/*C13*/DELETE FROM TBUSER WHERE ID=2
+INSERT INTO TBUSER VALUES(2,'2021-07-09 00:23:52.341000','2021-07-09 19:55:47.794000',NULL,NULL,'298888xxxx@qq.com','6\u5929','xx\u79d1\u6280\u516c\u53f8',NULL,1,1,'\u5f20\u5148\u751f','15205045558','\u8463\u4e8b\u957f','\u7537','\u5df2\u7b7e\u5408\u540c','\u975e\u5e38\u91cd\u8981')
+COMMIT
+INSERT INTO E_UPMS_OPERATE_LOG VALUES(60,'\u4fee\u6539 | \u5ba2\u6237\u7ba1\u7406','2021-07-09 19:55:47.798000',NULL,'192.168.0.107','0|0|0|\u5185\u7f51IP|\u5185\u7f51IP','http://127.0.0.1:8080/erupt-api/data/modify/TbUser','PUT','{"name":"xx\u79d1\u6280\u516c\u53f8","type":"\u975e\u5e38\u91cd\u8981","status":"\u5df2\u7b7e\u5408\u540c","contact":"\u5f20\u5148\u751f","position":"\u8463\u4e8b\u957f","sex":"\u7537","phone":"15205045558","email":"298888xxxx@qq.com","id":"2"}',TRUE,7,1)
 COMMIT
